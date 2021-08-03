@@ -128,6 +128,8 @@ module RSpotify
         is_local
       end
 
+      @foo = "hey"
+
       @genres = @tracks_cache.map{ |t| 
         t.artists.map(&:genres)
       }.uniq
