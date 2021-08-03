@@ -126,6 +126,10 @@ module RSpotify
         is_local
       end
 
+      @genres = @tracks_cache.map{ |t| 
+        t.artists.map(&:genres)
+      }.uniq
+
       super(options)
 
       @path = "users/#{@owner.instance_variable_get('@id').gsub('?','')}/"
