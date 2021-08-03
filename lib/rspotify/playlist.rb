@@ -12,6 +12,7 @@ module RSpotify
   # @attr [Hash]        tracks_added_at A hash containing the date and time each track was added to the playlist. Note: the hash is updated only when {#tracks} is used.
   # @attr [Hash]        tracks_added_by A hash containing the user that added each track to the playlist. Note: the hash is updated only when {#tracks} is used.
   # @attr [Hash]        tracks_is_local A hash showing whether each track is local or not. Note: the hash is updated only when {#tracks} is used.
+  # @attr [Array<String>] genres An array of genres represented in the Playlist
   class Playlist < Base
 
     # Get a list of Spotify featured playlists (shown, for example, on a Spotify player’s “Browse” tab).
@@ -94,6 +95,7 @@ module RSpotify
     end
 
     def initialize(options = {})
+      puts "INITIALIZING PLAYLIST"
       @collaborative = options['collaborative']
       @description   = options['description']
       @followers     = options['followers']
